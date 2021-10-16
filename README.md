@@ -22,6 +22,7 @@ To become a data analyst, I learn and organize various things.
 
 ```SELECT``` ```ORDER BY``` ```SELECT DISTINCT``` ```WHERE``` ```LIMIT``` ```FETCH``` ```IN``` ```BETWEEN``` ```LIKE``` ```IS NULL```
 
+- [개념 정리]()
 - [퀴즈 풀이]()
 - [리뷰 노트]()
 
@@ -29,6 +30,7 @@ To become a data analyst, I learn and organize various things.
 
 ```GROUP BY``` ```HAVING``` ```JOIN``` ```UNION``` ```INTERSECT``` ```EXCEPT``` ```서브쿼리```
 
+- [개념 정리]()
 - [퀴즈 풀이]()
 - [리뷰 노트]()
 
@@ -36,6 +38,7 @@ To become a data analyst, I learn and organize various things.
 
 ```GROUPING SET``` ```ROLL UP``` ```CUBE``` ```분석 함수 (WINDOW FUNCTION)``` ```조건 연산자``` ```TRANSACTION```
 
+- [개념 정리]()
 - [퀴즈 풀이]()
 - [리뷰 노트]()
 
@@ -62,3 +65,6 @@ To become a data analyst, I learn and organize various things.
 ``` 
 책 + 본인만의 공부로 데이터를 위한 통계학을 꽤나 깊게 공부합니다.
 ```
+
+1. <세상에서 가장 쉬운 통계학 입문>
+2. <데이터 과학을 위한 통계 >
