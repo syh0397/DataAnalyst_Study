@@ -176,3 +176,38 @@ FROM   tmp1;
 - 제일 위의 관리자부터 시작해서 `EMPLOYEE_ID` 1부터 계속 나열
 
 ###
+
+
+### 이해가 잘 안가서 찾아본 재귀 쿼리
+
+- **재귀** - **원래의 자리로 되돌아가거나 되돌아옴**
+    - 같은걸 반복한다?
+    - 한 쿼리가 반복되어 실행된다.
+        
+        a,b의 부모는 A, A,B의 부모는 AA
+        부모가 없는 최상위 AA 구조에서 아래와 같이 코드 작성
+        
+        ```sql
+        WITH RECURSIVE cte. -- MYsql에서는 RECURSIVE 추가
+             AS 
+        				(SELECT code,
+                        parent_code
+                 FROM   code_table
+                 WHERE  code = 'AA'  -- AA 인 부분부터 시작
+        
+                 UNION ALL
+        
+                 SELECT a.code, 
+                        a.parent_code
+                 FROM   code_table a
+                        INNER JOIN cte b
+                                ON a.parent_code = b.code)
+        -- AA 를 부모로 가지는 A 랑 B
+        -- A 또는 B를 부모로 가지는 a 와 b 까지 모두 select
+        SELECT code,
+               parent_code
+        FROM   cte
+        ```
+        
+
+참고 [https://allmana.tistory.com/134](https://allmana.tistory.com/134)
