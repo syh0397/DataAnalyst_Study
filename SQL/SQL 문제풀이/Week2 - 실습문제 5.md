@@ -2,7 +2,7 @@
 
 ### 영화 배우가,  영화 180분 이상의 길이 의 영화에 출연하거나, 영화의 rating 이 R 인 등급에 해당하는 영화에 출연한  영화 배우에 대해서,  영화 배우 ID 와 (180분이상 / R등급영화)에 대한 Flag 컬럼을 알려주세요.
 
-![Untitled](Week2%20-%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6%205%203a2e30c491c34807b4c4232e878eabed/Untitled.png)
+![Imgur](https://i.imgur.com/FM4sVVm.png)
 
 - film_actor 테이블과 film 테이블을 이용하세요.
 - union, unionall, intersect, except 중 상황에 맞게 사용해주세요.
@@ -119,12 +119,10 @@ GROUP  BY actor_id
 HAVING Count(DISTINCT film_id) >= 20
 ```
 
-![g등급의 actor_id 및 film_id](Week2%20-%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6%205%203a2e30c491c34807b4c4232e878eabed/Untitled%201.png)
-
+![Imgur](https://i.imgur.com/dW0GWLb.png)
 g등급의 actor_id 및 film_id
 
-![count film_id 포함 ](Week2%20-%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6%205%203a2e30c491c34807b4c4232e878eabed/Untitled%202.png)
-
+![Imgur](https://i.imgur.com/BtVgAYb.png)
 count film_id 포함 
 
 ```sql
@@ -135,7 +133,7 @@ HAVING Count( film_id) >= 20
 order by actor_id
 ```
 
-![Untitled](Week2%20-%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6%205%203a2e30c491c34807b4c4232e878eabed/Untitled%203.png)
+![Imgur](https://i.imgur.com/KfSGj8L.png)
 
 ```sql
 SELECT actor_id, count(distinct film_id) as cnt
