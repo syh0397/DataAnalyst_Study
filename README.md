@@ -16,10 +16,10 @@
 > **그로스팀 문화**
 > 
 > - 책읽기 진행시 모든 내용을 다 넣는다는 생각보다는 **중요한 내용 위주**로 정리
-> - 린 분석, 그로스해킹 ⇒ 책읽기에서 끝나는게 아니라 직접 데이터를 구해서
+> - 📚 린 분석, 그로스해킹 ⇒ 책읽기에서 끝나는게 아니라 직접 데이터를 구해서
 > - 실제로 문제를 정의하고 가설을 세워보는것 까지 ⇒ 어떻게 실험을 하겠다 (예시)
 
-> **통계**
+> **📊 통계**
 > 
 > - 책이 친절하지는 않음 ⇒ 지표 삼아서 만약 베이지안 이라면 우도, 조건부 확률을 본인이 공부해서 공유하는 방향으로 진행
 > - 통계적인 실험도 진행해서 프로젝트를 하나 만들 수 있게끔 진행
@@ -30,8 +30,9 @@
 ## SQL
 
 ```
-- 코드스테이츠 DA 스터디를 바탕으로 3주동안 실습하고 퀴즈를 풉니다. 
+- 코드스테이츠 DA 스터디를 바탕으로 8주동안 실습하고 퀴즈를 풉니다. 
 - 답안과 달랐던 풀이 + 새로 알게 된 내용을 리뷰 노트에 작성합니다.
+- Database - dvd-rental-sample-database
 ``` 
 
 ## Week 1
@@ -74,10 +75,8 @@ CUBE
 TRANSACTION  - 커밋 롤백
 ```
 
-- [개념 정리]()
-- [퀴즈 풀이]()
-- [리뷰 노트]()
-
+- [개념 정리](https://github.com/syh0397/DataAnalyst_Study/tree/main/SQL/SQL%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)
+- [문제 풀이](https://github.com/syh0397/DataAnalyst_Study/tree/main/SQL/SQL%20%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4)
 
 ---
 
@@ -91,11 +90,11 @@ TRANSACTION  - 커밋 롤백
 추가로 데이터를 통해 가설도 세워봅니다.
 ```
 
-1. [린 분석](http://www.yes24.com/24/goods/11775117?scode=032&OzSrank=1) - Lean Analytics,
-2. [진화된 마케팅 그로스 해킹](http://www.yes24.com/24/goods/53220322?scode=032&OzSrank=1) - Growth Hacking, 
-3. 팩트풀니스 -  Factfulness 
+1. 린분석 - [Lean Analytics](http://www.yes24.com/24/goods/11775117?scode=032&OzSrank=1),
+2. 진화된 마케팅 그로스 해킹 - [Growth Hacking] (http://www.yes24.com/24/goods/53220322?scode=032&OzSrank=1), 
+3. 팩트풀니스 -  [Factfulness](http://www.yes24.com/Product/Goods/69724044)
 
-팩트풀니스는 각자 참고용
+팩트풀니스는 각자 참고만 합니다.
 
 ---
 
@@ -110,3 +109,16 @@ TRANSACTION  - 커밋 롤백
 
 1. <세상에서 가장 쉬운 통계학 입문>
 2. <데이터 과학을 위한 통계 >
+
+[데이터 과학을 위한 통계 깃허브 실습 코드](https://github.com/gedeck/practical-statistics-for-data-scientists)
+
+
+- 목차
+
+    - Chapter 01. EDA (Exploratory Data Analysis)
+    - CHAPTER 2 데이터와 표본분포
+    - CHAPTER 3 통계적 실험과 유의성 검정
+    - CHAPTER 4 회귀와 예측
+    - CHAPTER 5 분류
+    - CHAPTER 6 통계적 머신러닝
+    - CHAPTER 7 비지도 학습
