@@ -1,0 +1,127 @@
+# 13.  CTE, Partition by
+
+# CTE (Common Table Expressions)
+
+- 단일 문의 범위 내에 존재
+    - 서브쿼리로 쓰이는 파생테이블(derived table)과 비슷한 개념
+    - 복잡한 쿼리문에서 코드의 **가독성**과 **재사용성**을 위해 파생테이블 대신 사용하기에 유용
+    - 즉, 서브쿼리보다 깔끔할수도 ?
+- 해당 문 내에서 여러 번 참조할 수 있는 명명된 임시 결과 집합 = 테이블
+- 📌 즉, **계속해서 사용할 수 있는 가상의 테이블**
+
+## CTE 만들기
+
+- 예시
+    
+    ![Untitled](13%20CTE,%20Partition%20by%20b596a596164f4fd8953d6ae34f0af7e1/Untitled.png)
+    
+    - `WITH`로 시작하여 *`CTE Body`*까지가 CTE입니다.
+    - `AS()` 안의 쿼리에 따라 `engineers`라는 이름의 결과 집합이 일시적으로 생성됩니다.
+    - CTE로 만들어진 결과 `engineers`는 *CTE Usage* 부분의 `FROM` 절 등에서 사용 가능합니다.
+    - CTE의 결과는 데이터베이스에 저장되지 않고, **쿼리가 수행되는 동안에만 존재**합니다.
+- 단일 테이블
+
+```sql
+
+WITH 가상테이블명 
+	AS ( SELECT 쿼리 
+				UNION ALL 
+				SELECT 쿼리 )
+
+```
+
+```sql
+-- 예시
+
+WITH cte_film
+     AS (SELECT film_id,
+                title,
+                ( CASE
+                    WHEN length < 30 THEN 'Short'
+                    WHEN length < 90 THEN 'Medium'
+                    ELSE 'Long'
+                  END ) length
+         FROM   film)
+SELECT film_id,
+       title,
+       length
+FROM   cte_film
+WHERE  length = 'Long'
+ORDER  BY title;
+```
+
+- 2개 이상의 가상 테이블
+- , 로 추가
+
+```sql
+WITH 
+		가상1 AS ( 서브쿼리문 ), 
+		가상2 AS ( 서브쿼리문 )
+
+```
+
+```sql
+-- 실제 사용 
+
+SELECT 컬럼, [컬럼, ...] FROM 가상1, 가상2
+```
+
+## 서브쿼리 쓰면 안되나 ? 굳이 with 써야하나 ?
+
+- 굳이 가상 테이블을 With문으로 만들 필요는 없음
+- 하지만 With문을 활용하였을 때 해당 SQL 환경에서 임시로 재사용이 가능하다는 장점
+    - 즉 CREATE TABLE을 하는게 아니라
+    - 임시로 테이블을 사용할때 유용함
+
+## VIEW vs CTE
+
+- VIEW는 만들기 위해 **권한이 필요**하고 **사전에 정의**를 해야한다.
+- 반면, **CTE는 권한이 필요 없고 하나의 쿼리문이 끝날때까지만 지속되는 일회성 테이블**
+
+## 주의할점
+
+- MySQL 8과 PostgreSQL에서는 CTE를 **Materializing**한다
+- CTE를 무분별하게 사용할 경우, Query performance가 오히려 더 떨어질 수 있다
+- Query Optimizer가 실행력을 계산할 때 CTE의 최적화를 고려하지 않는다
+    - 예로, 설정한 index가 CTE에서는 적용되지 않게 된다
+    
+
+# PARTITION BY
+
+```sql
+분석함수([칼럼]) OVER(PARTITION BY 칼럼1, 칼럼2... [ORDER BY 절] [WINDOWING 절])
+```
+
+- OVER 절 내부에 PATITION BY 절을 사용하지 않으면 쿼리 결과 전체를 집계
+- PARTITION BY 절을 사용하면 쿼리 결과에서 해당 칼럼을 그룹으로 묶어서 결과를 표시
+    - 즉, 구문 마다 GROUP BY 해서 컬럼에 값을 담는다.
+    
+
+<aside>
+⛔ 분석함수 관련 정리
+
+**SUM(SAL)**     
+
+분석함수 SUM을 사용했고 SAL 칼럼에 대한 행들이 행 그룹입니다.
+
+**OVER**              
+
+분석절이라고 합니다. 분석함수에 대한 조절을 OVER절 안에서 합니다.
+
+**PARTITION BY**
+
+GROUP BY와 동일하게 그룹지어 결과를 출력 합니다.
+
+**ORDER BY**       
+
+PARTITION BY로 정의된 WINDOW 내에서 행들의 정렬순서를 정의해줍니다.
+
+</aside>
+
+| 구분 | 분석함수 |
+| --- | --- |
+| 집계 | COUNT, MAX, MIN, SUM, AVG |
+| 순위 | ROW_NUMBER, RANK, DENSE_RANK |
+| 순서 | FIRST_VALUE, LAST_VALUE, LAG, LEAD |
+| 통계 | STDDEV, VARIANCE |
+| 비율 | RATIO_TO_REPORT, CUME_DIST, PERCENT_RANK, NTITLE |
