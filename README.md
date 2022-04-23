@@ -8,12 +8,12 @@
 
 
 
-> **SQL은 각자 하루에 한문제 이상씩 풀고 공유하기 (최소한 주 5회 이상)**
-> 
+``` SQL은 각자 하루에 한문제 이상씩 풀고 공유하기 (최소한 주 5회 이상)```
+
 > - [Github Repository](https://github.com/syh0397/DataAnalyst_Study)
 > - 위와 같은 방식으로 본인 깃헙 레포를 파서 당일 공부한 내용을 올리고 오픈챗팅방에 공유합니다.
 
-> **그로스팀 문화**
+> **그로스 해킹**
 > 
 > - 책읽기 진행시 모든 내용을 다 넣는다는 생각보다는 **중요한 내용 위주**로 정리
 > - 📚 린 분석, 그로스해킹 ⇒ 책읽기에서 끝나는게 아니라 직접 데이터를 구해서
@@ -30,49 +30,26 @@
 ## SQL
 
 ```
-- 코드스테이츠 DA 스터디를 바탕으로 8주동안 실습하고 퀴즈를 풉니다. 
+- 8주동안 실습하고 퀴즈를 풉니다. 
 - 답안과 달랐던 풀이 + 새로 알게 된 내용을 리뷰 노트에 작성합니다.
-- Database - dvd-rental-sample-database
 ``` 
 
-## Week 1
+#### 알하야 하는 목록 
 
 ```
-SELECT 
-ORDER BY 
-SELECT DISTINCT
-WHERE
-LIMIT
-FETCH
-IN
-BETWEEN
-LIKE
-IS NULL
+SELECT ORDER BY  SELECT DISTINCT WHERE
+LIMIT FETCH IN BETWEEN LIKE IS NULL
+```
+```
+GROUP BY  HAVING JOIN  UNION INTERSECT EXCEPT Sub-Query
+```
+```
+GROUPING SET ROLL UP CUBE 분석 함수  조건 연산자 TRANSACTION  - commit rollback 
 ```
 
-
-## Week 2
-
 ```
-GROUP BY
-HAVING
-JOIN 
-UNION
-INTERSECT
-EXCEPT
-서브쿼리
-```
-
-
-## Week 3
-
-```
-GROUPING SET
-ROLL UP
-CUBE
-분석 함수 (WINDOW FUNCTION)
-조건 연산자
-TRANSACTION  - 커밋 롤백
+create delete table exists not exists 
+(WINDOW FUNCTION) - 단순집계, lead lag , ntile , rank함수 관련 등 
 ```
 
 - [개념 정리](https://github.com/syh0397/DataAnalyst_Study/tree/main/SQL/SQL%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)
@@ -91,10 +68,14 @@ TRANSACTION  - 커밋 롤백
 ```
 
 1. 린분석 - [Lean Analytics](http://www.yes24.com/24/goods/11775117?scode=032&OzSrank=1),
-2. 진화된 마케팅 그로스 해킹 - [Growth Hacking] (http://www.yes24.com/24/goods/53220322?scode=032&OzSrank=1), 
-3. 팩트풀니스 -  [Factfulness](http://www.yes24.com/Product/Goods/69724044)
+2. 진화된 마케팅 그로스 해킹 - [Growth Hacking](http://www.yes24.com/24/goods/53220322?scode=032&OzSrank=1), 
+3. Factfulness -  [Factfulness](http://www.yes24.com/Product/Goods/69724044)
 
 팩트풀니스는 각자 참고만 합니다.
+
+추가 
+4. 데이터 문해력
+5. 데이터 분석가의 숫자유감
 
 ---
 
@@ -102,12 +83,12 @@ TRANSACTION  - 커밋 롤백
 ## Statistics
 
 ``` 
-책 
-+ 
-본인만의 공부로 데이터를 위한 통계학을 꽤나 깊게 공부합니다.
+책  +  본인만의 공부로 데이터를 위한 통계학을 공부합니다.
 ```
 
 1. <세상에서 가장 쉬운 통계학 입문>
+
+
 2. <데이터 과학을 위한 통계 >
 
 [데이터 과학을 위한 통계 깃허브 실습 코드](https://github.com/gedeck/practical-statistics-for-data-scientists)
